@@ -1,6 +1,6 @@
 use ndarray::{Array1, Array2, Zip};
 
-/**A trait in rust is similar to interfaces.
+/**A trait in rust is similar to interfaces in java.
  * This trait describes a base for the neural network struct */
 pub trait NeuralNetwork {
     /**Getter functions */
@@ -54,7 +54,7 @@ pub trait NeuralNetwork {
         }
     }
 
-    /**Implements forward propagation using an input matrix x */
+    /**Implements forward propagation using an input matrix */
     fn forward_propagation(&mut self, img: &Array2<f64>) {
         //calculating the hidden layer matrix in h_calc
         let hid_calc = Self::get_hid_weights(&self).dot(img) + &Self::get_hid_bias(&self);
@@ -89,6 +89,7 @@ pub trait NeuralNetwork {
         Self::set_hid_bias(self, Self::get_hid_bias(&self) + (-lr * delta_hid));
     }
 
+    /**The network will guess what digit the image is */
     fn make_guess(&mut self, image: &Array1<f64>) -> usize {
         //to make a guess, the network must forward propogate once with the img
         let img = image.to_shape((image.len(), 1)).unwrap().to_owned();
