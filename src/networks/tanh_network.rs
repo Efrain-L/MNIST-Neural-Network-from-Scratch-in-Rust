@@ -38,7 +38,7 @@ impl TanhNetwork {
     }
 }
 
-/**Implementing the neural net trait for the network using sigmoid for the activation function */
+/**Implementing the neural net trait for the network using Tanh for the activation function */
 impl NeuralNetwork for TanhNetwork {
     /**Implementing the activation function as the tanh function of x*/
     fn activation(x: Array2<f64>) -> Array2<f64> {
