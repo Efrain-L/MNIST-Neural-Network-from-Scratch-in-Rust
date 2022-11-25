@@ -7,4 +7,5 @@ The program itself contains three different implementations of a neural network,
 The test data set contains 10,000 images of handwritten digits which each network is not trained on, and is therefore new to the networks.
 
 One of the sample images from the data set:
+
 ![Sample image of a 2 from the MNIST data set](/selected_img.png)
